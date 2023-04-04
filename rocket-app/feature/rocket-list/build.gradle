@@ -68,7 +68,7 @@ dependencies {
 
 detekt {
     toolVersion = "1.22.0"
-    source = files("src/main/kotlin")
+    source = files("src/main/kotlin", "src/test/kotlin")
     config = files("${project.rootDir}/detekt.yml")
     buildUponDefaultConfig = true
 }

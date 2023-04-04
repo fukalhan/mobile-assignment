@@ -11,7 +11,7 @@ import java.time.LocalDate
 class GetRocketsUseCaseTest {
 
     @Test
-    fun `should provide rockets from repository` () = runTest {
+    fun `should provide rockets from repository`() = runTest {
         val rocket = Rocket(
             id = "falcon1",
             name = "Falcon 1",

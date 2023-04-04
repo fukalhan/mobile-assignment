@@ -34,7 +34,7 @@ fun RocketAppNavHost() {
                 arguments = listOf(navArgument(ARG_ROCKET_ID) { type = NavType.StringType })
             ) { backStackEntry ->
                 backStackEntry.arguments?.getString(ARG_ROCKET_ID)?.let {
-                    RocketDetailScreen(it) {
+                    RocketDetailScreen(koinViewModel(), it) {
                         navController.popBackStack()
                     }
                 }

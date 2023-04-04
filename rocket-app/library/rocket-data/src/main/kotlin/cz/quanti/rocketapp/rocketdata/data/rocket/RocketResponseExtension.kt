@@ -1,4 +1,4 @@
-package cz.quanti.rocketapp.rocketdata.data
+package cz.quanti.rocketapp.rocketdata.data.rocket
 
 import cz.quanti.rocketapp.rocketdata.model.Rocket
 import java.time.LocalDate
@@ -7,8 +7,6 @@ internal fun RocketResponse.toRocket(): Rocket {
     return Rocket(
         this.id,
         this.name,
-        LocalDate.parse(this.firstFlight),
-        "",
-        rocketParameters
+        LocalDate.parse(this.firstFlight)
     )
 }

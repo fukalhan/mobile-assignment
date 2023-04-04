@@ -32,21 +32,24 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import cz.quanti.rocketapp.rocketdetail.R
 import cz.quanti.rocketapp.rocketdetail.presentation.ParameterState
 import cz.quanti.rocketapp.rocketdetail.presentation.RocketDetailState
 import cz.quanti.rocketapp.rocketdetail.presentation.RocketDetailViewModel
 
 @Composable
-fun RocketDetailScreen(id: String, onNavigateBack: () -> Unit) {
-    val viewModel = viewModel<RocketDetailViewModel>()
-    val rocketState: RocketDetailState by viewModel.rocket.collectAsState()
-    viewModel.getRocket(id)
+fun RocketDetailScreen(
+    viewModel: RocketDetailViewModel,
+    id: String,
+    onNavigateBack: () -> Unit,
+) {
+    val rocketDetailState: RocketDetailState by viewModel.rocketDetail.collectAsState()
+    viewModel.getRocketDetail(id)
+
     Scaffold(
-        topBar = { TopBar(rocketState.name, onNavigateBack) }
+        topBar = { TopBar(rocketDetailState.name, onNavigateBack) }
     ) { innerPadding ->
-        RocketDetail(rocketState, innerPadding)
+        RocketDetail(rocketDetailState, innerPadding)
     }
 }
 

@@ -2,6 +2,7 @@ package cz.quanti.rocketapp.rocketlist.system
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -17,7 +18,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
@@ -30,9 +30,7 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
             .background(RocketAppTheme.colors.componentBackground)
             .fillMaxSize()
             .padding(RocketAppTheme.dimensions.sidePadding)
-/*
             .clickable { navigateToRocketDetail(rocketItem.id) }
-*/
     ) {
         Image(
             painter = painterResource(id = R.drawable.rocket),
@@ -73,17 +71,4 @@ fun RocketOverview(rocketItem: RocketItemState) {
             color = RocketAppTheme.colors.textSecondary
         )
     }
-}
-
-@Preview
-@Composable
-fun RocketCardPreview() {
-    RocketCard(
-        rocketItem = RocketItemState(
-            id = 1,
-            name = "Falcon 1",
-            firstFlight = "First flight: 14.2.2013"
-        ),
-        navigateToRocketDetail = {}
-    )
 }

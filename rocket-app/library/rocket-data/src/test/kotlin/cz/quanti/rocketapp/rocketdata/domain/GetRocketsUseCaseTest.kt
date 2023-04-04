@@ -13,11 +13,9 @@ class GetRocketsUseCaseTest {
     @Test
     fun `should provide rockets from repository` () = runTest {
         val rocket = Rocket(
-            id = 1,
+            id = "falcon1",
             name = "Falcon 1",
-            firstFlight = LocalDate.parse("2006-03-24"),
-            overview = "Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009",
-            parameters = mockk()
+            firstFlight = LocalDate.parse("2006-03-24")
         )
 
         val repository = mockk<RocketRepository> {

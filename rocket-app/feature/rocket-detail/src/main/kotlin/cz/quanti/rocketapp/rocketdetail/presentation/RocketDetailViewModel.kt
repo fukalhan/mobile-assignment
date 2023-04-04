@@ -1,16 +1,21 @@
 package cz.quanti.rocketapp.rocketdetail.presentation
 
 import androidx.lifecycle.ViewModel
-import cz.quanti.rocketapp.rocketdata.data.rocketsMock
+import androidx.lifecycle.viewModelScope
+import cz.quanti.rocketapp.rocketdata.domain.GetRocketDetailUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
-class RocketDetailViewModel : ViewModel() {
-    private val _rocket = MutableStateFlow(RocketDetailState())
-    val rocket: StateFlow<RocketDetailState>
-        get() = _rocket
+class RocketDetailViewModel(private val getRocketDetailUseCase: GetRocketDetailUseCase) : ViewModel() {
+    private val _rocketDetail = MutableStateFlow(RocketDetailState())
+    val rocketDetail: StateFlow<RocketDetailState>
+        get() = _rocketDetail
 
-    fun getRocket(id: String) {
-        _rocket.value = RocketDetailState(rocketsMock[id.toInt() - 1])
+    fun getRocketDetail(id: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            _rocketDetail.value = getRocketDetailUseCase.getRocketDetail(id).toRocketDetailState()
+        }
     }
 }

@@ -1,5 +1,6 @@
 package cz.quanti.rocketapp.rocketdata.data
 
+import cz.quanti.rocketapp.rocketdata.data.rocket.RocketResponse
 import cz.quanti.rocketapp.rocketdata.domain.RocketApiService
 import cz.quanti.rocketapp.rocketdata.model.Rocket
 import io.kotest.matchers.shouldBe
@@ -14,7 +15,7 @@ class SpaceXRocketRepositoryTest {
     @Test
     fun `should provide rockets from api`() = runTest {
         val response = RocketResponse(
-            1,
+            "falcon1",
             "Falcon 1",
             "2006-03-24"
         )
@@ -26,6 +27,6 @@ class SpaceXRocketRepositoryTest {
         val rockets = repo.getRockets()
 
         // The rocketParameters are mocked for RocketResponseExtension
-        rockets.first() shouldBe Rocket(1, "Falcon 1", LocalDate.parse(response.firstFlight), "", rocketParameters)
+        rockets.first() shouldBe Rocket("falcon1", "Falcon 1", LocalDate.parse(response.firstFlight))
     }
 }

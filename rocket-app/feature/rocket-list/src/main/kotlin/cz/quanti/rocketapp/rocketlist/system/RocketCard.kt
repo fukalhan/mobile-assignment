@@ -59,7 +59,7 @@ fun RocketOverview(rocketItem: RocketItemState) {
     ) {
         Text(
             text = rocketItem.name,
-            style = RocketAppTheme.typography.cardTitle,
+            style = RocketAppTheme.typography.title,
             color = RocketAppTheme.colors.textPrimary
         )
 
@@ -67,7 +67,7 @@ fun RocketOverview(rocketItem: RocketItemState) {
 
         Text(
             text = rocketItem.firstFlight,
-            style = RocketAppTheme.typography.cardBody,
+            style = RocketAppTheme.typography.body,
             color = RocketAppTheme.colors.textSecondary
         )
     }

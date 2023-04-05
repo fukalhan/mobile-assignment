@@ -15,7 +15,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketdetail.presentation.StageOrder
 import cz.quanti.rocketapp.rocketdetail.presentation.StageState
@@ -27,11 +26,11 @@ fun Stage(stageState: StageState, stageOrder: StageOrder) {
             .clip(RoundedCornerShape(RocketAppTheme.dimensions.roundCorners))
             .background(RocketAppTheme.colors.background)
             .fillMaxWidth()
-            .padding(10.dp)
+            .padding(RocketAppTheme.dimensions.sidePadding)
     ) {
         Text(
             text = stageOrder.order,
-            style = RocketAppTheme.typography.cardTitle,
+            style = RocketAppTheme.typography.title,
             color = RocketAppTheme.colors.textPrimary
         )
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
@@ -62,7 +61,7 @@ fun StageParameter(iconRes: Int, text: String) {
 
         Text(
             text = text,
-            style = RocketAppTheme.typography.cardBody,
+            style = RocketAppTheme.typography.body,
             color = RocketAppTheme.colors.textPrimary
         )
     }

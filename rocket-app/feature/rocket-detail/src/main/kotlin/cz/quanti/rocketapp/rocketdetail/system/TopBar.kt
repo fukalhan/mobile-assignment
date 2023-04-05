@@ -20,7 +20,7 @@ import cz.quanti.rocketapp.rocketdetail.R
 @Composable
 fun TopBar(rocketName: String, onNavigateBack: () -> Unit) {
     TopAppBar(
-        elevation = 4.dp,
+        elevation = RocketAppTheme.dimensions.elevation,
         backgroundColor = RocketAppTheme.colors.background,
     ) {
         Row(
@@ -32,7 +32,7 @@ fun TopBar(rocketName: String, onNavigateBack: () -> Unit) {
             Text(
                 text = rocketName,
                 color = RocketAppTheme.colors.textPrimary,
-                style = RocketAppTheme.typography.cardTitle,
+                style = RocketAppTheme.typography.title,
                 modifier = Modifier
                     .weight(1f)
                     .padding(start = 60.dp)
@@ -41,7 +41,7 @@ fun TopBar(rocketName: String, onNavigateBack: () -> Unit) {
             Text(
                 text = stringResource(id = R.string.launch),
                 color = Color.Blue,
-                style = RocketAppTheme.typography.cardTitle,
+                style = RocketAppTheme.typography.title,
             )
         }
     }
@@ -60,7 +60,7 @@ fun BackToRocketsTextButton(onNavigateBack: () -> Unit) {
 
         Text(
             text = stringResource(id = R.string.rockets),
-            style = RocketAppTheme.typography.cardTitle,
+            style = RocketAppTheme.typography.title,
             color = Color.Blue
         )
     }

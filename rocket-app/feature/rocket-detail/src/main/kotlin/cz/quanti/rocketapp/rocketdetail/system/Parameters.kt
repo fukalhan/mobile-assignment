@@ -15,7 +15,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketdetail.R
 import cz.quanti.rocketapp.rocketdetail.presentation.ParameterState
@@ -29,7 +28,7 @@ fun ParameterRow(
     Text(
         text = stringResource(R.string.parameters),
         color = RocketAppTheme.colors.textPrimary,
-        style = RocketAppTheme.typography.cardTitle
+        style = RocketAppTheme.typography.title
     )
     Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
 
@@ -47,7 +46,7 @@ fun ParameterRow(
 fun ParameterDetail(param: ParameterState) {
     Column(
         modifier = Modifier
-            .size(110.dp)
+            .size(RocketAppTheme.dimensions.paramCardSize)
             .clip(RoundedCornerShape(RocketAppTheme.dimensions.roundCorners))
             .background(color = RocketAppTheme.colors.primary),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -55,12 +54,12 @@ fun ParameterDetail(param: ParameterState) {
     ) {
         Text(
             text = param.value,
-            style = RocketAppTheme.typography.cardTitle,
+            style = RocketAppTheme.typography.title,
             color = RocketAppTheme.colors.cardText
         )
         Text(
             text = param.type.paramName,
-            style = RocketAppTheme.typography.cardBody,
+            style = RocketAppTheme.typography.body,
             color = RocketAppTheme.colors.cardText
         )
     }

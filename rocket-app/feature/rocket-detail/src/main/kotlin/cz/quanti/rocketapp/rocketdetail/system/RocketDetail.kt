@@ -11,7 +11,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketdetail.R
 import cz.quanti.rocketapp.rocketdetail.presentation.RocketDetailState
@@ -25,7 +24,7 @@ fun RocketDetail(rocketState: RocketDetailState) {
         modifier = Modifier
             .background(RocketAppTheme.colors.componentBackground)
             .verticalScroll(scrollState)
-            .padding(10.dp)
+            .padding(RocketAppTheme.dimensions.sidePadding)
     ) {
         Overview(rocketState.overview)
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.bigSpacer))
@@ -48,7 +47,7 @@ fun Overview(overview: String) {
     Text(
         text = stringResource(R.string.overview),
         color = RocketAppTheme.colors.textPrimary,
-        style = RocketAppTheme.typography.cardTitle
+        style = RocketAppTheme.typography.title
     )
 
     Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
@@ -56,6 +55,6 @@ fun Overview(overview: String) {
     Text(
         text = overview,
         color = RocketAppTheme.colors.textPrimary,
-        style = RocketAppTheme.typography.cardBody
+        style = RocketAppTheme.typography.body
     )
 }

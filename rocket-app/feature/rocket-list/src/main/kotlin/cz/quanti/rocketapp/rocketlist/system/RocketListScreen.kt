@@ -41,8 +41,8 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
             color = RocketAppTheme.colors.textPrimary,
             modifier = Modifier
                 .padding(
-                    start = RocketAppTheme.dimensions.sidePadding,
-                    top = RocketAppTheme.dimensions.titleTopPadding
+                    top = RocketAppTheme.dimensions.titleTopPadding,
+                    start = RocketAppTheme.dimensions.sidePadding
                 )
         )
 

@@ -37,6 +37,9 @@ fun RocketDetail(rocketState: RocketDetailState) {
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.bigSpacer))
 
         Stage(stageState = rocketState.secondStage, stageOrder = StageOrder.SECOND_STAGE)
+        Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.bigSpacer))
+
+        Photos(urls = rocketState.images)
     }
 }
 

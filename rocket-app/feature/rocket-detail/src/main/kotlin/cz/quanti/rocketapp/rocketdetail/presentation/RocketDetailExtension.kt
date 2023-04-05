@@ -11,7 +11,8 @@ internal fun RocketDetail.toRocketDetailState(): RocketDetailState {
         diameter = ParameterState.DiameterState(this.diameter),
         mass = ParameterState.MassState(this.mass),
         firstStage = this.firstStage.toStageState(),
-        secondStage = this.secondStage.toStageState()
+        secondStage = this.secondStage.toStageState(),
+        images = this.images
     )
 }
 

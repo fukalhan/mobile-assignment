@@ -7,7 +7,8 @@ data class RocketDetailState(
     val diameter: ParameterState = ParameterState.DiameterState(0.0),
     val mass: ParameterState = ParameterState.MassState(0),
     val firstStage: StageState = StageState(),
-    val secondStage: StageState = StageState()
+    val secondStage: StageState = StageState(),
+    val images: List<String> = emptyList()
 )
 
 sealed class ParameterState(

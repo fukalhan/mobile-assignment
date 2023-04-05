@@ -8,5 +8,6 @@ data class RocketDetail(
     val diameter: Double,
     val mass: Int,
     val firstStage: Stage,
-    val secondStage: Stage
+    val secondStage: Stage,
+    val images: List<String>
 )

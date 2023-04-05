@@ -7,7 +7,7 @@ import cz.quanti.rocketapp.rocketdata.data.rocketdetail.MassResponse
 import cz.quanti.rocketapp.rocketdata.data.rocketdetail.RocketDetailResponse
 import cz.quanti.rocketapp.rocketdata.data.rocketdetail.StageResponse
 import cz.quanti.rocketapp.rocketdata.domain.RocketApiService
-import cz.quanti.rocketapp.rocketdata.model.Rocket
+import cz.quanti.rocketapp.rocketdata.model.rocket.Rocket
 import cz.quanti.rocketapp.rocketdata.model.rocketdetail.RocketDetail
 import cz.quanti.rocketapp.rocketdata.model.rocketdetail.Stage
 import io.kotest.matchers.shouldBe

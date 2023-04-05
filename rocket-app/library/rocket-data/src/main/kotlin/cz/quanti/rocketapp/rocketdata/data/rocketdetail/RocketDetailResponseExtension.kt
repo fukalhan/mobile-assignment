@@ -11,6 +11,7 @@ internal fun RocketDetailResponse.toRocketDetail(): RocketDetail {
         diameter = this.diameter.value,
         mass = this.mass.value,
         firstStage = this.firstStage.toStage(),
-        secondStage = this.secondStage.toStage()
+        secondStage = this.secondStage.toStage(),
+        images = this.images
     )
 }

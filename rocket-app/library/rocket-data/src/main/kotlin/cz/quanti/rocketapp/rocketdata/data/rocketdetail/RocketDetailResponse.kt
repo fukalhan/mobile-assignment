@@ -18,5 +18,7 @@ internal data class RocketDetailResponse(
     @SerializedName("first_stage")
     val firstStage: StageResponse,
     @SerializedName("second_stage")
-    val secondStage: StageResponse
+    val secondStage: StageResponse,
+    @SerializedName("flickr_images")
+    val images: List<String>
 )

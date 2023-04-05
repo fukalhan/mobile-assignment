@@ -1,4 +1,4 @@
-package cz.quanti.rocketapp.rocketdata.model
+package cz.quanti.rocketapp.rocketdata.model.rocket
 
 import java.time.LocalDate
 

@@ -2,7 +2,7 @@ package cz.quanti.rocketapp.rocketlist.presentation
 
 import app.cash.turbine.test
 import cz.quanti.rocketapp.rocketdata.domain.GetRocketsUseCase
-import cz.quanti.rocketapp.rocketdata.model.Rocket
+import cz.quanti.rocketapp.rocketdata.model.rocket.Rocket
 import io.kotest.matchers.shouldBe
 import io.mockk.coEvery
 import io.mockk.coVerify

@@ -4,7 +4,7 @@ import cz.quanti.rocketapp.rocketdata.data.rocket.toRocket
 import cz.quanti.rocketapp.rocketdata.data.rocketdetail.toRocketDetail
 import cz.quanti.rocketapp.rocketdata.domain.RocketApiService
 import cz.quanti.rocketapp.rocketdata.domain.RocketRepository
-import cz.quanti.rocketapp.rocketdata.model.Rocket
+import cz.quanti.rocketapp.rocketdata.model.rocket.Rocket
 import cz.quanti.rocketapp.rocketdata.model.rocketdetail.RocketDetail
 
 internal class SpaceXRocketRepository(private val api: RocketApiService) : RocketRepository {

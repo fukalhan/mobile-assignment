@@ -2,7 +2,7 @@ package cz.quanti.rocketapp.rocketdata.data
 
 import cz.quanti.rocketapp.rocketdata.data.rocket.RocketResponse
 import cz.quanti.rocketapp.rocketdata.data.rocket.toRocket
-import cz.quanti.rocketapp.rocketdata.model.Rocket
+import cz.quanti.rocketapp.rocketdata.model.rocket.Rocket
 import io.kotest.matchers.shouldBe
 import org.junit.Test
 import java.time.LocalDate

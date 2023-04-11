@@ -1,5 +1,7 @@
 package cz.quanti.rocketapp.rocketdetail.presentation
 
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import cz.quanti.rocketapp.rocketdetail.R
 
 data class StageState(
@@ -11,18 +13,36 @@ data class StageState(
 
 sealed class StageParameter(
     val iconRes: Int,
-    val text: String
+    val stringRes: @Composable () -> String
 )
 
 class Reusable(reusable: Boolean = false) : StageParameter(
     R.drawable.reusable,
-    if (reusable) "reusable" else "not reusable"
+    {
+        if (reusable) stringResource(R.string.reusable) else stringResource(R.string.notReusable)
+    }
 )
-class Engines(enginesNum: Int = 0) : StageParameter(R.drawable.engine, "$enginesNum engines")
-class Fuel(fuelAmount: Double = 0.0) : StageParameter(R.drawable.fuel, "$fuelAmount tons of fuel")
-class BurnTime(burnTime: Double = 0.0) : StageParameter(R.drawable.burn, "$burnTime seconds burn time")
+class Engines(enginesNum: Int = 0) : StageParameter(
+    R.drawable.engine,
+    {
+        stringResource(R.string.enginesNum, enginesNum)
+    }
+)
 
-enum class StageOrder(val order: String) {
-    FIRST_STAGE("First stage"),
-    SECOND_STAGE("Second stage")
+class Fuel(fuelAmount: Double = 0.0) : StageParameter(
+    R.drawable.fuel,
+    {
+        stringResource(R.string.fuelAmount, fuelAmount)
+    }
+)
+class BurnTime(burnTime: Double = 0.0) : StageParameter(
+    R.drawable.burn,
+    {
+        stringResource(R.string.burnTime, burnTime)
+    }
+)
+
+enum class StageOrder(val orderRes: Int) {
+    FIRST_STAGE(R.string.firstStage),
+    SECOND_STAGE(R.string.secondStage)
 }

@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketdetail.presentation.StageOrder
 import cz.quanti.rocketapp.rocketdetail.presentation.StageState
@@ -29,28 +30,28 @@ fun Stage(stageState: StageState, stageOrder: StageOrder) {
             .padding(RocketAppTheme.dimensions.sidePadding)
     ) {
         Text(
-            text = stageOrder.order,
+            text = stringResource(stageOrder.orderRes),
             style = RocketAppTheme.typography.title,
             color = RocketAppTheme.colors.textPrimary
         )
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
 
-        StageParameter(stageState.reusable.iconRes, stageState.reusable.text)
+        StageParameter(stageState.reusable.iconRes, stageState.reusable.stringRes)
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
 
-        StageParameter(stageState.engines.iconRes, stageState.engines.text)
+        StageParameter(stageState.engines.iconRes, stageState.engines.stringRes)
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
 
-        StageParameter(stageState.fuelAmount.iconRes, stageState.fuelAmount.text)
+        StageParameter(stageState.fuelAmount.iconRes, stageState.fuelAmount.stringRes)
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
 
-        StageParameter(stageState.burnTime.iconRes, stageState.burnTime.text)
+        StageParameter(stageState.burnTime.iconRes, stageState.burnTime.stringRes)
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
     }
 }
 
 @Composable
-fun StageParameter(iconRes: Int, text: String) {
+fun StageParameter(iconRes: Int, messageRes: @Composable () -> String) {
     Row {
         Image(
             painter = painterResource(iconRes),
@@ -60,7 +61,7 @@ fun StageParameter(iconRes: Int, text: String) {
         Spacer(modifier = Modifier.width(RocketAppTheme.dimensions.mediumSpacer))
 
         Text(
-            text = text,
+            text = messageRes(),
             style = RocketAppTheme.typography.body,
             color = RocketAppTheme.colors.textPrimary
         )

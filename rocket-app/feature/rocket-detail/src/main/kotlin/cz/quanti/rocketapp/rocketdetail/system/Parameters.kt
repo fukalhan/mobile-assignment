@@ -5,9 +5,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -36,19 +38,25 @@ internal fun ParameterRow(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
-        ParameterDetail(height)
-        ParameterDetail(diameter)
-        ParameterDetail(mass)
+        val modifier = Modifier
+            .weight(1f)
+            .aspectRatio(1f)
+            .fillMaxSize()
+            .clip(RoundedCornerShape(RocketAppTheme.dimensions.roundCorners))
+            .background(color = RocketAppTheme.colors.primary)
+
+        ParameterDetail(height, modifier)
+        Spacer(modifier = Modifier.width(RocketAppTheme.dimensions.largeSpacer))
+        ParameterDetail(diameter, modifier)
+        Spacer(modifier = Modifier.width(RocketAppTheme.dimensions.largeSpacer))
+        ParameterDetail(mass, modifier)
     }
 }
 
 @Composable
-private fun ParameterDetail(param: ParameterState) {
+private fun ParameterDetail(param: ParameterState, modifier: Modifier) {
     Column(
-        modifier = Modifier
-            .size(RocketAppTheme.dimensions.paramCardSize)
-            .clip(RoundedCornerShape(RocketAppTheme.dimensions.roundCorners))
-            .background(color = RocketAppTheme.colors.primary),
+        modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {

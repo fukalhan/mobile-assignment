@@ -13,7 +13,7 @@ class RocketDetailViewModel(private val getRocketDetailUseCase: GetRocketDetailU
     val rocketDetail: StateFlow<RocketDetailState>
         get() = _rocketDetail
 
-    fun getRocketDetail(id: String) {
+    fun initRocketDetail(id: String) {
         viewModelScope.launch(Dispatchers.IO) {
             _rocketDetail.value = getRocketDetailUseCase.getRocketDetail(id).toRocketDetailState()
         }

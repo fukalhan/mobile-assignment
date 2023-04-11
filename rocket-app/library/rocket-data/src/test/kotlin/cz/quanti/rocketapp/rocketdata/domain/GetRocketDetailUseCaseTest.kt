@@ -31,7 +31,8 @@ class GetRocketDetailUseCaseTest {
                 2,
                 435.3,
                 234.4
-            )
+            ),
+            listOf("ImageUrl")
         )
 
         val repository = mockk<RocketRepository> {

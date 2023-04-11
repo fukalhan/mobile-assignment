@@ -15,6 +15,13 @@ class RocketDetailViewModelTest {
     @Test
     fun `should provide rocket detail from use case`() = runTest {
         val rocketId = "falcon1"
+        val stage = Stage(
+            true,
+            3,
+            505.2,
+            163.5
+        )
+
         val rocketDetail = RocketDetail(
             rocketId,
             "Falcon 1",
@@ -22,18 +29,9 @@ class RocketDetailViewModelTest {
             40.3,
             200.1,
             500,
-            Stage(
-                true,
-                3,
-                505.2,
-                163.5
-            ),
-            Stage(
-                false,
-                2,
-                435.3,
-                234.4
-            )
+            stage,
+            stage,
+            listOf("ImageUrl")
         )
 
         val useCase = mockk<GetRocketDetailUseCase> {
@@ -41,7 +39,7 @@ class RocketDetailViewModelTest {
         }
 
         val viewModel = RocketDetailViewModel(useCase)
-        viewModel.getRocketDetail(rocketId)
+        viewModel.initRocketDetail(rocketId)
         viewModel.rocketDetail.test {
             expectMostRecentItem() shouldBe RocketDetailState(
                 "Falcon 1",
@@ -49,7 +47,9 @@ class RocketDetailViewModelTest {
                 ParameterState.HeightState(40.3),
                 ParameterState.DiameterState(200.1),
                 ParameterState.MassState(500),
-
+                stage.toStageState(),
+                stage.toStageState(),
+                listOf("ImageUrl")
             )
         }
     }

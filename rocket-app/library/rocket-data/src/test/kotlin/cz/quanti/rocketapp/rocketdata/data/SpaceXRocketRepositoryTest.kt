@@ -57,7 +57,8 @@ class SpaceXRocketRepositoryTest {
                 2,
                 435.3,
                 234.4
-            )
+            ),
+            listOf("ImageUrl")
         )
 
         val api = mockk<RocketApiService> {
@@ -85,7 +86,8 @@ class SpaceXRocketRepositoryTest {
                 2,
                 435.3,
                 234.4
-            )
+            ),
+            listOf("ImageUrl")
         )
     }
 }

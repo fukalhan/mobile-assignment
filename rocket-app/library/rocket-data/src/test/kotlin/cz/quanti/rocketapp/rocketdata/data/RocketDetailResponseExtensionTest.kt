@@ -33,7 +33,8 @@ class RocketDetailResponseExtensionTest {
                 2,
                 435.3,
                 234.4
-            )
+            ),
+            listOf("ImageUrl")
         )
 
         val rocketDetail = rocketDetailResponse.toRocketDetail()
@@ -55,7 +56,8 @@ class RocketDetailResponseExtensionTest {
                 2,
                 435.3,
                 234.4
-            )
+            ),
+            listOf("ImageUrl")
         )
     }
 }

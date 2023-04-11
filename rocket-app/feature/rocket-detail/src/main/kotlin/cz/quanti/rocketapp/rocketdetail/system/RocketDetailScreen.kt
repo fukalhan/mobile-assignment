@@ -15,6 +15,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketdetail.R
 import cz.quanti.rocketapp.rocketdetail.presentation.RocketDetailState
@@ -79,4 +80,21 @@ fun Overview(overview: String) {
         color = RocketAppTheme.colors.textPrimary,
         style = RocketAppTheme.typography.body
     )
+}
+
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+@Preview
+@Composable
+fun RocketDetailScreenPreview() {
+    Scaffold(
+        topBar = { TopBar("Screen") { } },
+    ) {
+        RocketDetailPreview()
+    }
+}
+
+@Preview
+@Composable
+fun RocketDetailPreview() {
+    RocketDetail(rocketState = RocketDetailState())
 }

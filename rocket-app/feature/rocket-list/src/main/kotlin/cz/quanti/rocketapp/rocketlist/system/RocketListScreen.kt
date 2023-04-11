@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
@@ -58,4 +59,10 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun RocketListScreenPreview() {
+    RocketList(rockets = RocketListState().rockets, navigateToRocketDetail = {})
 }

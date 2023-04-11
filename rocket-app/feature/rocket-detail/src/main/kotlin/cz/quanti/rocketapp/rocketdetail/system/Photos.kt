@@ -17,7 +17,7 @@ import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketdetail.R
 
 @Composable
-fun Photos(urls: List<String>) {
+internal fun Photos(urls: List<String>) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -39,7 +39,7 @@ fun Photos(urls: List<String>) {
 }
 
 @Composable
-fun Photo(url: String) {
+private fun Photo(url: String) {
     AsyncImage(
         model = url,
         contentDescription = "Rocket photo",

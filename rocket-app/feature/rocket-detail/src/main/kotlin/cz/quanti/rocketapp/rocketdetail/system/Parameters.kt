@@ -20,7 +20,7 @@ import cz.quanti.rocketapp.rocketdetail.R
 import cz.quanti.rocketapp.rocketdetail.presentation.ParameterState
 
 @Composable
-fun ParameterRow(
+internal fun ParameterRow(
     height: ParameterState,
     diameter: ParameterState,
     mass: ParameterState,
@@ -43,7 +43,7 @@ fun ParameterRow(
 }
 
 @Composable
-fun ParameterDetail(param: ParameterState) {
+private fun ParameterDetail(param: ParameterState) {
     Column(
         modifier = Modifier
             .size(RocketAppTheme.dimensions.paramCardSize)

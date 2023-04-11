@@ -21,7 +21,7 @@ import cz.quanti.rocketapp.rocketdetail.presentation.StageOrder
 import cz.quanti.rocketapp.rocketdetail.presentation.StageState
 
 @Composable
-fun Stage(stageState: StageState, stageOrder: StageOrder) {
+internal fun Stage(stageState: StageState, stageOrder: StageOrder) {
     Column(
         modifier = Modifier
             .clip(RoundedCornerShape(RocketAppTheme.dimensions.roundCorners))
@@ -51,7 +51,7 @@ fun Stage(stageState: StageState, stageOrder: StageOrder) {
 }
 
 @Composable
-fun StageParameter(iconRes: Int, messageRes: @Composable () -> String) {
+private fun StageParameter(iconRes: Int, messageRes: @Composable () -> String) {
     Row {
         Image(
             painter = painterResource(iconRes),

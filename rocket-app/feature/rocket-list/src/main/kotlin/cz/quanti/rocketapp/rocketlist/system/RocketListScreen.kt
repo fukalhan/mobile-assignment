@@ -30,7 +30,7 @@ fun RocketListScreen(viewModel: RocketListViewModel, navigateToRocketDetail: (St
 }
 
 @Composable
-fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) -> Unit) {
+private fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()

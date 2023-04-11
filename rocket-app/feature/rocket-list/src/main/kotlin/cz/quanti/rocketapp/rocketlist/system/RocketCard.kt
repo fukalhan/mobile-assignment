@@ -23,7 +23,7 @@ import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
 
 @Composable
-fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> Unit) {
+internal fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> Unit) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
@@ -53,7 +53,7 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
 }
 
 @Composable
-fun RocketOverview(rocketItem: RocketItemState) {
+private fun RocketOverview(rocketItem: RocketItemState) {
     Column(
         modifier = Modifier.wrapContentWidth()
     ) {

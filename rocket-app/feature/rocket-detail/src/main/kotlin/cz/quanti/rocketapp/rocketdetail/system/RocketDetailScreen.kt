@@ -40,7 +40,7 @@ fun RocketDetailScreen(
 }
 
 @Composable
-fun RocketDetail(rocketState: RocketDetailState) {
+private fun RocketDetail(rocketState: RocketDetailState) {
     val scrollState = rememberScrollState()
 
     Column(
@@ -66,7 +66,7 @@ fun RocketDetail(rocketState: RocketDetailState) {
 }
 
 @Composable
-fun Overview(overview: String) {
+private fun Overview(overview: String) {
     Text(
         text = stringResource(R.string.overview),
         color = RocketAppTheme.colors.textPrimary,

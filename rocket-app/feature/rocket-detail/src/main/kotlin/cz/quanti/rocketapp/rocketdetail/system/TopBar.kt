@@ -18,7 +18,7 @@ import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketdetail.R
 
 @Composable
-fun TopBar(rocketName: String, onNavigateBack: () -> Unit) {
+internal fun TopBar(rocketName: String, onNavigateBack: () -> Unit) {
     TopAppBar(
         elevation = RocketAppTheme.dimensions.elevation,
         backgroundColor = RocketAppTheme.colors.background,
@@ -48,7 +48,7 @@ fun TopBar(rocketName: String, onNavigateBack: () -> Unit) {
 }
 
 @Composable
-fun BackToRocketsTextButton(onNavigateBack: () -> Unit) {
+private fun BackToRocketsTextButton(onNavigateBack: () -> Unit) {
     Row(
         modifier = Modifier.clickable { onNavigateBack() }
     ) {

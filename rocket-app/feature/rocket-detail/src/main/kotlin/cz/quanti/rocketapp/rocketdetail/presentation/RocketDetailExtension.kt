@@ -47,4 +47,4 @@ internal fun Stage.toStageState(
 }
 
 const val ROUNDING_VAL = 100.0
-private fun round(num: Double): Double = (num * ROUNDING_VAL).roundToInt() / ROUNDING_VAL
+internal fun round(num: Double): Double = (num * ROUNDING_VAL).roundToInt() / ROUNDING_VAL

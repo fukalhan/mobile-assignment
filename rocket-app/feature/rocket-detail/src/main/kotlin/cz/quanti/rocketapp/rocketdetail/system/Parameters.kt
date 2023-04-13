@@ -66,7 +66,7 @@ private fun ParameterDetail(param: ParameterState, modifier: Modifier) {
             color = RocketAppTheme.colors.cardText
         )
         Text(
-            text = param.type.paramName,
+            text = param.label,
             style = RocketAppTheme.typography.body,
             color = RocketAppTheme.colors.cardText
         )

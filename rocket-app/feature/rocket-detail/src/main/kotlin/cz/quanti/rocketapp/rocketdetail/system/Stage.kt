@@ -36,22 +36,16 @@ internal fun Stage(stageState: StageState, stageOrder: StageOrder) {
         )
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
 
-        StageParameter(stageState.reusable.iconRes, stageState.reusable.stringRes)
-        Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
-
-        StageParameter(stageState.engines.iconRes, stageState.engines.stringRes)
-        Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
-
-        StageParameter(stageState.fuelAmount.iconRes, stageState.fuelAmount.stringRes)
-        Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
-
-        StageParameter(stageState.burnTime.iconRes, stageState.burnTime.stringRes)
-        Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
+        StageParameter(stageState.reusable.iconRes, stageState.reusable.parameterString)
+        StageParameter(stageState.engines.iconRes, stageState.engines.parameterString)
+        StageParameter(stageState.fuelAmount.iconRes, stageState.fuelAmount.parameterString)
+        StageParameter(stageState.burnTime.iconRes, stageState.burnTime.parameterString)
     }
+    Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.largeSpacer))
 }
 
 @Composable
-private fun StageParameter(iconRes: Int, messageRes: @Composable () -> String) {
+private fun StageParameter(iconRes: Int, text: String) {
     Row {
         Image(
             painter = painterResource(iconRes),
@@ -61,9 +55,10 @@ private fun StageParameter(iconRes: Int, messageRes: @Composable () -> String) {
         Spacer(modifier = Modifier.width(RocketAppTheme.dimensions.mediumSpacer))
 
         Text(
-            text = messageRes(),
+            text = text,
             style = RocketAppTheme.typography.body,
             color = RocketAppTheme.colors.textPrimary
         )
     }
+    Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.mediumSpacer))
 }

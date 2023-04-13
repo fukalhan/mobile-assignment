@@ -56,10 +56,8 @@ private fun RocketDetail(rocketState: RocketDetailState) {
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.largeSpacer))
 
         Stage(stageState = rocketState.firstStage, stageOrder = StageOrder.FIRST_STAGE)
-        Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.largeSpacer))
 
         Stage(stageState = rocketState.secondStage, stageOrder = StageOrder.SECOND_STAGE)
-        Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.largeSpacer))
 
         Photos(urls = rocketState.images)
     }

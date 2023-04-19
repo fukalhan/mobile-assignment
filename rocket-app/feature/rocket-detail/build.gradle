@@ -48,6 +48,7 @@ android {
 
 dependencies {
     implementation project(':library:rocket-data')
+    implementation project(':library:design')
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
@@ -56,7 +57,13 @@ dependencies {
     implementation "androidx.compose.material:material:$compose_ui_version"
     implementation "androidx.compose.ui:ui:$compose_ui_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
+    implementation "io.coil-kt:coil-compose:2.3.0"
+    implementation "io.insert-koin:koin-android:3.3.3"
     testImplementation 'junit:junit:4.13.2'
+    testImplementation "io.mockk:mockk:1.13.4"
+    testImplementation 'app.cash.turbine:turbine:0.12.1'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
+    testImplementation 'io.kotest:kotest-assertions-core-jvm:5.5.5'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0"
@@ -64,7 +71,7 @@ dependencies {
 
 detekt {
     toolVersion = "1.22.0"
-    source = files("src/main/kotlin")
+    source = files("src/main/kotlin", "src/test/kotlin")
     config = files("${project.rootDir}/detekt.yml")
     buildUponDefaultConfig = true
 }

@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
@@ -29,7 +30,7 @@ fun RocketListScreen(viewModel: RocketListViewModel, navigateToRocketDetail: (St
 }
 
 @Composable
-fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) -> Unit) {
+private fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -41,8 +42,8 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
             color = RocketAppTheme.colors.textPrimary,
             modifier = Modifier
                 .padding(
-                    start = RocketAppTheme.dimensions.sidePadding,
-                    top = RocketAppTheme.dimensions.titleTopPadding
+                    top = RocketAppTheme.dimensions.titleTopPadding,
+                    start = RocketAppTheme.dimensions.sidePadding
                 )
         )
 
@@ -58,4 +59,10 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun RocketListScreenPreview() {
+    RocketList(rockets = RocketListState().rockets, navigateToRocketDetail = {})
 }

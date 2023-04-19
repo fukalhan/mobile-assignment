@@ -9,6 +9,7 @@ data class RocketAppColorPalette(
     val secondary: Color,
     val textPrimary: Color,
     val textSecondary: Color,
+    val cardText: Color,
     val background: Color,
     val componentBackground: Color,
 )
@@ -18,6 +19,7 @@ val rocketAppColorPalette = RocketAppColorPalette(
     secondary = grey,
     textPrimary = black,
     textSecondary = grey,
+    cardText = white,
     background = lightGrey,
     componentBackground = white
 )

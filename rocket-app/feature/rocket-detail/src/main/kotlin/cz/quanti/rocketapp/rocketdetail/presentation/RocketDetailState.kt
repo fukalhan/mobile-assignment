@@ -1,37 +1,36 @@
 package cz.quanti.rocketapp.rocketdetail.presentation
 
-import cz.quanti.rocketapp.rocketdata.model.Rocket
+import cz.quanti.rocketapp.rocketdetail.R
 
 data class RocketDetailState(
     val name: String = "",
     val overview: String = "",
-    val height: ParameterState = ParameterState.HeightState(0),
-    val diameter: ParameterState = ParameterState.DiameterState(0),
-    val mass: ParameterState = ParameterState.MassState(0),
-) {
-    constructor(rocket: Rocket) : this(
-        rocket.name,
-        rocket.overview,
-        ParameterState.HeightState(rocket.parameters.height),
-        ParameterState.DiameterState(rocket.parameters.diameter),
-        ParameterState.MassState(rocket.parameters.mass),
-    )
-}
+    val height: ParameterState = ParameterState(),
+    val diameter: ParameterState = ParameterState(),
+    val mass: ParameterState = ParameterState(),
+    val firstStage: StageState = StageState(),
+    val secondStage: StageState = StageState(),
+    val images: List<String> = emptyList()
+)
 
-sealed class ParameterState(
-    val value: String,
-    val type: ParameterType
-) {
-    data class HeightState(val height: Int) : ParameterState("${height}m", ParameterType.HEIGHT)
-    data class DiameterState(val diameter: Int) : ParameterState(
-        "${diameter}m",
-        ParameterType.DIAMETER
-    )
-    data class MassState(val mass: Int) : ParameterState("${mass}t", ParameterType.MASS)
-}
+data class ParameterState(
+    val value: String = "",
+    val label: String = ""
+)
 
-enum class ParameterType(val paramName: String) {
-    HEIGHT("height"),
-    DIAMETER("diameter"),
-    MASS("mass")
+data class StageState(
+    val reusable: StageParameter = StageParameter(R.drawable.reusable),
+    val engines: StageParameter = StageParameter(R.drawable.engine),
+    val fuelAmount: StageParameter = StageParameter(R.drawable.fuel),
+    val burnTime: StageParameter = StageParameter(R.drawable.burn)
+)
+
+data class StageParameter(
+    val iconRes: Int,
+    val parameterString: String = "",
+)
+
+enum class StageOrder(val orderRes: Int) {
+    FIRST_STAGE(R.string.firstStage),
+    SECOND_STAGE(R.string.secondStage)
 }

@@ -12,4 +12,4 @@ naming:
 style:
   MagicNumber:
     active: true
-    excludes: [ '**/Colors.kt', '**/RocketDataMock.kt']
+    excludes: [ '**/Colors.kt', '**/test/**']

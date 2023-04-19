@@ -2,4 +2,20 @@
 <resources>
     <string name="overview">Overview</string>
     <string name="parameters">Parameters</string>
+    <string name="rockets">Rockets</string>
+    <string name="launch">Launch</string>
+    <string name="photos">Photos</string>
+    <string name="reusable">reusable</string>
+    <string name="notReusable">not reusable</string>
+    <string name="enginesNum">%1$d engines</string>
+    <string name="fuelAmount">%1$.1f tons of fuel</string>
+    <string name="burnTime">%1$.1f seconds burn time</string>
+    <string name="firstStage">First stage</string>
+    <string name="secondStage">Second stage</string>
+    <string name="height">height</string>
+    <string name="diameter">diameter</string>
+    <string name="mass">mass</string>
+    <string name="heightVal">%1$.2fm</string>
+    <string name="diameterVal">%1$.2fm</string>
+    <string name="massVal">%1$dt</string>
 </resources>

@@ -8,8 +8,8 @@ import androidx.compose.ui.unit.sp
 @Immutable
 data class RocketAppTypography(
     val screenTitle: TextStyle,
-    val cardTitle: TextStyle,
-    val cardBody: TextStyle
+    val title: TextStyle,
+    val body: TextStyle
 )
 
 val rocketAppTypography = RocketAppTypography(
@@ -18,12 +18,12 @@ val rocketAppTypography = RocketAppTypography(
         fontSize = 48.sp,
         letterSpacing = 0.sp
     ),
-    cardTitle = TextStyle(
+    title = TextStyle(
         fontWeight = FontWeight.Medium,
         fontSize = 20.sp,
         letterSpacing = 0.15.sp
     ),
-    cardBody = TextStyle(
+    body = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         letterSpacing = 0.15.sp

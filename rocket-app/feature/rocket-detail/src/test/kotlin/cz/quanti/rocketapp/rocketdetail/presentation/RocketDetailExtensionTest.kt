@@ -9,7 +9,7 @@ import io.mockk.every
 import io.mockk.mockk
 import org.junit.Test
 
-class RocketDetailExtensionKtTest {
+class RocketDetailExtensionTest {
 
     @Test
     fun `should provide rocket detail state from rocket detail`() {

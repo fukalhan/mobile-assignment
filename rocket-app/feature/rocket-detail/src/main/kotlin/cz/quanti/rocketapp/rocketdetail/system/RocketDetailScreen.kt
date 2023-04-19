@@ -87,12 +87,6 @@ fun RocketDetailScreenPreview() {
     Scaffold(
         topBar = { TopBar("Screen") { } },
     ) {
-        RocketDetailPreview()
+        RocketDetail(rocketState = RocketDetailState())
     }
-}
-
-@Preview
-@Composable
-fun RocketDetailPreview() {
-    RocketDetail(rocketState = RocketDetailState())
 }
